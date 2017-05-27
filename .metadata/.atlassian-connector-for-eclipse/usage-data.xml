@@ -28,4 +28,34 @@
   <pluginId>com.atlassian.connector.eclipse.monitor.core</pluginId>
   <eventId>system info: plugins</eventId>
   <details>{jira.ui=3.2.5.I20150617-0100, jira.core=3.2.5.I20150617-0100, monitor.core=3.2.5.I20150617-0100, monitor.ui=3.2.5.I20150617-0100, commons.core=3.2.5.I20150617-0100, commons.ui=3.2.5.I20150617-0100, branding.ui=3.2.5.I20150617-0100}</details>
+</interactionEvent><interactionEvent>
+  <kind>PREFERENCE</kind>
+  <date>2017-05-27 20:28:12.320 BRT</date>
+  <pluginId>com.atlassian.connector.eclipse.monitor.core</pluginId>
+  <eventId>system info: os-arch</eventId>
+  <details>x86_64</details>
+</interactionEvent><interactionEvent>
+  <kind>PREFERENCE</kind>
+  <date>2017-05-27 20:28:12.351 BRT</date>
+  <pluginId>com.atlassian.connector.eclipse.monitor.core</pluginId>
+  <eventId>system info: os</eventId>
+  <details>macosx</details>
+</interactionEvent><interactionEvent>
+  <kind>PREFERENCE</kind>
+  <date>2017-05-27 20:28:12.352 BRT</date>
+  <pluginId>com.atlassian.connector.eclipse.monitor.core</pluginId>
+  <eventId>system info: org.eclipse.core.runtime</eventId>
+  <details>3.12.0.v20160606-1342</details>
+</interactionEvent><interactionEvent>
+  <kind>PREFERENCE</kind>
+  <date>2017-05-27 20:28:12.353 BRT</date>
+  <pluginId>com.atlassian.connector.eclipse.monitor.core</pluginId>
+  <eventId>system info: connector-version</eventId>
+  <details>3.2.5.I20150617-0100</details>
+</interactionEvent><interactionEvent>
+  <kind>PREFERENCE</kind>
+  <date>2017-05-27 20:28:12.356 BRT</date>
+  <pluginId>com.atlassian.connector.eclipse.monitor.core</pluginId>
+  <eventId>system info: plugins</eventId>
+  <details>{jira.ui=3.2.5.I20150617-0100, jira.core=3.2.5.I20150617-0100, monitor.core=3.2.5.I20150617-0100, monitor.ui=3.2.5.I20150617-0100, commons.core=3.2.5.I20150617-0100, commons.ui=3.2.5.I20150617-0100, branding.ui=3.2.5.I20150617-0100}</details>
 </interactionEvent>
