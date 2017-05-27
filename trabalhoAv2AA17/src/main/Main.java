@@ -1,8 +1,16 @@
 package main;
 
-public class Main {
+import java.awt.List;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Scanner;
 
+public class Main {
+	
 	public static void main(String[] args){
+		Scanner s = new Scanner(System.in);
+		System.out.println("Informe o tamanho da tabela?");
+		int tamTab = s.nextInt();
 		System.out.println(MemoizedCutRod(1, 5));
 		
 	}
@@ -24,6 +32,15 @@ public class Main {
 
     public static int MemoizedCutRodAux(int price, int lenght) {
 
+    	Scanner leitor = new Scanner(new File("local.txt"));
+    	List<String> linhas = new ArrayList<>();
+    	while (leitor.hasNextLine()) {
+    	    linhas.add(leitor.nextLine());
+    	}
+    	leitor.close();
+    	String[] vetorDeLinhas = linhas.toArray();
+    	
+    	
         int[] priceTable = new int[11];
         priceTable[1] = 1;
         priceTable[2] = 5;
