@@ -1,0 +1,3 @@
+com.atlassian.connector.eclipse.monitor.usage.enabled=true
+com.atlassian.connector.eclipse.monitor.usage.first.time=false
+eclipse.preferences.version=1

@@ -1,9 +1,11 @@
 package main;
 
-import java.awt.List;
+
 import java.io.File;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+
 
 public class Main {
 	
@@ -11,7 +13,7 @@ public class Main {
 		Scanner s = new Scanner(System.in);
 		System.out.println("Informe o tamanho da tabela?");
 		int tamTab = s.nextInt();
-		System.out.println(MemoizedCutRod(1, 5));
+		System.out.println(MemoizedCutRod(1, 2));
 		
 	}
 	
@@ -27,20 +29,11 @@ public class Main {
         for (int i = 1; i <= lenght; i++) {
             r[i] = 0;
         }
-        return MemoizedCutRodAux(price, lenght);
+        return MemoizedCutRodAux(price, lenght, r);
     }
 
-    public static int MemoizedCutRodAux(int price, int lenght) {
+    public static int MemoizedCutRodAux(int price, int lenght, int[] r) {
 
-    	Scanner leitor = new Scanner(new File("local.txt"));
-    	List<String> linhas = new ArrayList<>();
-    	while (leitor.hasNextLine()) {
-    	    linhas.add(leitor.nextLine());
-    	}
-    	leitor.close();
-    	String[] vetorDeLinhas = linhas.toArray();
-    	
-    	
         int[] priceTable = new int[11];
         priceTable[1] = 1;
         priceTable[2] = 5;
@@ -53,14 +46,19 @@ public class Main {
         priceTable[9] = 24;
         priceTable[10] = 30;
 
+        if (r[lenght] >= 0) {
+            return r[lenght];
+        }
+
         if (lenght == 0) {
             return 0;
         }
-        int q = 0;
-        for (int i = 1; i <= lenght; i++) {
-            q = max(q, priceTable[i] + MemoizedCutRodAux(price, lenght - i));
-        }
+        int q=1;
 
+        for (int i = 1; i <= lenght; i++) {
+            q = max(q, priceTable[i] + MemoizedCutRodAux(price, lenght, r));
+            r[lenght] = q;
+        }
         return q;
     }
 }
