@@ -1445,3 +1445,86 @@ org.eclipse.recommenders.utils.Logs$LogTraceException
 
 !ENTRY org.eclipse.jface.text 2 0 2017-05-27 20:58:43.537
 !MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY com.atlassian.connector.eclipse.monitor.core 4 0 2017-05-28 16:53:27.515
+!MESSAGE Could not read interaction history
+!STACK 0
+com.thoughtworks.xstream.converters.ConversionException: com.atlassian.connector.eclipse.monitor.core.InteractionEvent : com.atlassian.connector.eclipse.monitor.core.InteractionEvent : com.atlassian.connector.eclipse.monitor.core.InteractionEvent : com.atlassian.connector.eclipse.monitor.core.InteractionEvent
+---- Debugging information ----
+message             : com.atlassian.connector.eclipse.monitor.core.InteractionEvent : com.atlassian.connector.eclipse.monitor.core.InteractionEvent
+cause-exception     : com.thoughtworks.xstream.mapper.CannotResolveClassException
+cause-message       : com.atlassian.connector.eclipse.monitor.core.InteractionEvent : com.atlassian.connector.eclipse.monitor.core.InteractionEvent
+class               : java.util.ArrayList
+required-type       : java.util.ArrayList
+path                : /list/interactionEvent
+-------------------------------
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:89)
+	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:63)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:76)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:60)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.start(TreeUnmarshaller.java:137)
+	at com.thoughtworks.xstream.core.AbstractTreeMarshallingStrategy.unmarshal(AbstractTreeMarshallingStrategy.java:33)
+	at com.thoughtworks.xstream.XStream.unmarshal(XStream.java:923)
+	at com.thoughtworks.xstream.XStream.unmarshal(XStream.java:909)
+	at com.thoughtworks.xstream.XStream.fromXML(XStream.java:853)
+	at com.thoughtworks.xstream.XStream.fromXML(XStream.java:845)
+	at com.atlassian.connector.eclipse.monitor.core.InteractionEventLogger.getHistoryFromStream(InteractionEventLogger.java:147)
+	at com.atlassian.connector.eclipse.monitor.core.InteractionEventLogger.getHistoryFromFile(InteractionEventLogger.java:124)
+	at com.atlassian.connector.eclipse.internal.monitor.core.operations.UsageDataUploadJob.processMonitorFile(UsageDataUploadJob.java:144)
+	at com.atlassian.connector.eclipse.internal.monitor.core.operations.UsageDataUploadJob.zipFilesForUpload(UsageDataUploadJob.java:120)
+	at com.atlassian.connector.eclipse.internal.monitor.core.operations.UsageDataUploadJob.performUpload(UsageDataUploadJob.java:91)
+	at com.atlassian.connector.eclipse.internal.monitor.core.operations.UsageDataUploadJob.checkLastTransmitTimeAndRun(UsageDataUploadJob.java:82)
+	at com.atlassian.connector.eclipse.internal.monitor.core.operations.UsageDataUploadJob.run(UsageDataUploadJob.java:58)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: com.thoughtworks.xstream.mapper.CannotResolveClassException: com.atlassian.connector.eclipse.monitor.core.InteractionEvent : com.atlassian.connector.eclipse.monitor.core.InteractionEvent
+	at com.thoughtworks.xstream.mapper.DefaultMapper.realClass(DefaultMapper.java:68)
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:38)
+	at com.thoughtworks.xstream.mapper.DynamicProxyMapper.realClass(DynamicProxyMapper.java:71)
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:38)
+	at com.thoughtworks.xstream.mapper.PackageAliasingMapper.realClass(PackageAliasingMapper.java:88)
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:38)
+	at com.thoughtworks.xstream.mapper.ClassAliasingMapper.realClass(ClassAliasingMapper.java:86)
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:38)
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:38)
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:38)
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:38)
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:38)
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:38)
+	at com.thoughtworks.xstream.mapper.ArrayMapper.realClass(ArrayMapper.java:96)
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:38)
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:38)
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:38)
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:38)
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:38)
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:38)
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:38)
+	at com.thoughtworks.xstream.mapper.CachingMapper.realClass(CachingMapper.java:52)
+	at com.thoughtworks.xstream.core.util.HierarchicalStreams.readClassType(HierarchicalStreams.java:29)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.readItem(AbstractCollectionConverter.java:70)
+	at com.thoughtworks.xstream.converters.collections.CollectionConverter.populateCollection(CollectionConverter.java:68)
+	at com.thoughtworks.xstream.converters.collections.CollectionConverter.unmarshal(CollectionConverter.java:61)
+	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:82)
+	... 17 more
+
+!ENTRY com.atlassian.connector.eclipse.monitor.core 4 0 2017-05-28 16:53:28.863
+!MESSAGE Usage Data wasn't uploaded because there's no network connection. Please try again later.
+!STACK 0
+java.net.UnknownHostException: update.atlassian.com
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:184)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:668)
+	at sun.security.ssl.SSLSocketImpl.<init>(SSLSocketImpl.java:472)
+	at sun.security.ssl.SSLSocketFactoryImpl.createSocket(SSLSocketFactoryImpl.java:153)
+	at org.apache.commons.httpclient.protocol.SSLProtocolSocketFactory.createSocket(SSLProtocolSocketFactory.java:82)
+	at org.apache.commons.httpclient.protocol.SSLProtocolSocketFactory.createSocket(SSLProtocolSocketFactory.java:127)
+	at org.apache.commons.httpclient.HttpConnection.open(HttpConnection.java:707)
+	at org.apache.commons.httpclient.HttpMethodDirector.executeWithRetry(HttpMethodDirector.java:387)
+	at org.apache.commons.httpclient.HttpMethodDirector.executeMethod(HttpMethodDirector.java:171)
+	at org.apache.commons.httpclient.HttpClient.executeMethod(HttpClient.java:397)
+	at org.apache.commons.httpclient.HttpClient.executeMethod(HttpClient.java:323)
+	at com.atlassian.connector.eclipse.internal.monitor.core.operations.UsageDataUploadJob.upload(UsageDataUploadJob.java:174)
+	at com.atlassian.connector.eclipse.internal.monitor.core.operations.UsageDataUploadJob.performUpload(UsageDataUploadJob.java:96)
+	at com.atlassian.connector.eclipse.internal.monitor.core.operations.UsageDataUploadJob.checkLastTransmitTimeAndRun(UsageDataUploadJob.java:82)
+	at com.atlassian.connector.eclipse.internal.monitor.core.operations.UsageDataUploadJob.run(UsageDataUploadJob.java:58)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)

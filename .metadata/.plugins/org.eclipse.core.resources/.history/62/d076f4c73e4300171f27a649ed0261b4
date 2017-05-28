@@ -1,0 +1,17 @@
+package teste;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.util.Scanner;
+
+public class main {  
+   public static void main (String args[])throws Exception{  
+	   Readable sr;
+	Scanner sc = new Scanner(sr);  
+	   sc.useDelimiter(";|\n|\r");  
+	   int[] matriz = new int[10];  
+	   for (int i = 0; i < 10; i++) {   
+	           matriz[i] = sc.nextInt();  
+	   }  
+}  
