@@ -1,0 +1,25 @@
+package main;
+
+import java.util.ArrayList;
+
+public class RodCutting {
+    static int cutRod(int preço[], int n) {
+        if (n <= 0)
+            return 0;
+        int max_val = Integer.MIN_VALUE;
+        for (int i = 0; i<n; i++)
+            max_val = Math.max(max_val, preço[i] + cutRod(preço, n-i-1));
+        	return max_val;
+    }
+    
+    public static void main(String args[]) {
+    	ArrayList arr = new ArrayList((Collection) new FileReader("c:\texto.txt"));
+    	//Scanner arr = new Scanner (new FileReader("c:\texto.txt"));
+    	//BufferedReader arr = new BufferedReader(new FileReader("C:\texto.txt"));
+    	//int arr[] = new int[new File("Texto.txt")];
+    	//int arr[] = new File("Texto.txt");
+    	//int arr[] = new int[] {1, 5, 8, 9, 10, 17, 17, 20};
+    	int size = arr.length;
+    	System.out.println("Maximum Obtainable Value is "+ cutRod(arr, size));
+	}
+}

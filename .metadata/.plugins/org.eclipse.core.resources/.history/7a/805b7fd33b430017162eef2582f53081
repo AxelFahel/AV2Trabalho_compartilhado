@@ -1,0 +1,38 @@
+package main;
+
+import java.io.BufferedReader;  
+import java.io.File;  
+import java.io.FileReader;  
+import java.io.IOException;  
+import java.io.LineNumberReader;  
+import java.util.Scanner;  
+import java.util.ArrayList; 
+
+public class RodCutting {
+    static int cutRod(int preço[], int n) {
+        if (n <= 0)
+            return 0;
+        int max_val = Integer.MIN_VALUE;
+        for (int i = 0; i<n; i++)
+            max_val = Math.max(max_val, preço[i] + cutRod(preço, n-i-1));
+        	return max_val;
+    }
+    
+    public static void main(String args[]) {
+    	final String camarq ="C:\texto.txt";
+    	String leitura;
+    	File arq1 = new File(camarq);
+    	BufferedReader entrada = new BufferedReader(new FileReader(arq1));
+    	
+    	String linha = null;
+    	LineNumberReader lnr = new LineNumberReader(new FileReader(arq1));
+    	lnr.skip(arq1.length());
+    	int qtd = lnr.getLineNumber();
+    	int qtdLinhas = qtd + 1;
+    	
+    	int arr[] = new int[camarq];
+    	//int arr[] = new int[] {1, 5, 8, 9, 10, 17, 17, 20};
+    	//int tam = arr.length;
+    	System.out.println("Valor Maximo Obtido é "+ cutRod(arr, qtdLinhas));
+	}
+}
