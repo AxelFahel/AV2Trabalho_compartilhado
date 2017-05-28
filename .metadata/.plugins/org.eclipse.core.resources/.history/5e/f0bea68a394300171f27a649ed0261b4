@@ -18,7 +18,7 @@ public class main2 {
 
     }
 
-    public static int MemoizedCutRod(int price, int lenght) throws FileNotFoundException {
+    public static int MemoizedCutRod(int price, int lenght) {
 
         int[] r = new int[lenght + 1];
         for (int i = 1; i <= lenght; i++) {
@@ -31,18 +31,17 @@ public class main2 {
     	int v=0;
     	int total=0;
     	
-    	Scanner in = new Scanner(new FileReader("dados.txt"));
-    	while (in.hasNextLine()) {
-    	    String line = in.nextLine();
-    	    System.out.println(line);
-    	    total++;
-    	}
-    	
+    	String arquivo = new Scanner(new File("/Users/axelfahel/Desktop/ler.txt"))
+    			             .useDelimiter("\\Z").next();
+			
+		while (scanner.hasNext()) {
+			total++;
+		}
 		System.out.println(total);
 		int[] priceTable = new int[11];
 		
-		while (in.hasNext()) {
-			priceTable[v] = in.nextInt();
+		while (scanner.hasNext()) {
+			priceTable[v] = scanner.nextInt();
 			v++;
 		}
 
