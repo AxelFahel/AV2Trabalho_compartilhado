@@ -39,7 +39,7 @@ public class main2 {
     	}
     	
 		System.out.println(total);
-		int[] priceTable = new int[total];
+		int[] priceTable = new int[11];
 		
 		while (in.hasNext()) {
 			priceTable[v] = in.nextInt();
